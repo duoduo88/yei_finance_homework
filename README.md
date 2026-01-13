@@ -2,7 +2,7 @@
 
 ## 项目概述
 
-本项目旨在完成了 Yei CCTP Agent 在六条区块链（ETH、BASE、AVAX、ARB、POLYGON、OP）上的跨链转账数据分析任务。
+本项目旨在完成 Yei CCTP Agent 在六条区块链（ETH、BASE、AVAX、ARB、POLYGON、OP）上的跨链转账数据分析任务。
 
 ## 文件结构
 
@@ -219,6 +219,7 @@ OP:      https://api.goldsky.com/api/public/project_cmgzims7d000c5np28b637r62/su
 
 
 # 详细的查询语句和使用示例请参考 `subgraph_queries.md` 文件。
+
 
 
 
