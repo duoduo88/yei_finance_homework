@@ -1,0 +1,73 @@
+{
+  "report_generated_at": "2026-01-13T19:04:35.334687",
+  "data_period": {
+    "start_date": "2024-10-06",
+    "end_date": "2025-08-04",
+    "total_days": 278
+  },
+  "overall_statistics": {
+    "total_transfers": 17598,
+    "total_amount_usd": 317400233.816208,
+    "average_amount_usd": 18036.153757029664,
+    "chains_covered": [
+      "ETH",
+      "BASE",
+      "AVAX",
+      "ARB",
+      "POLYGON",
+      "OP"
+    ]
+  },
+  "time_analysis": {
+    "most_active_date": "2025-03-04",
+    "most_active_transfers": 1730,
+    "highest_volume_date": "2025-05-08",
+    "highest_volume_amount": 19091074.73,
+    "daily_average_transfers": 63.302158273381295,
+    "daily_average_amount": 1141727.4599640286
+  },
+  "chain_breakdown": {
+    "ETH": {
+      "total_transfers": 1141,
+      "total_amount_usd": 62966673.888968,
+      "average_amount_usd": 55185.51611653637,
+      "percentage_of_total_transfers": 6.483691328560064,
+      "percentage_of_total_volume": 19.838256932548173
+    },
+    "BASE": {
+      "total_transfers": 3217,
+      "total_amount_usd": 11428598.583351001,
+      "average_amount_usd": 3552.5640607245887,
+      "percentage_of_total_transfers": 18.28048641891124,
+      "percentage_of_total_volume": 3.6006900328777895
+    },
+    "AVAX": {
+      "total_transfers": 2280,
+      "total_amount_usd": 181139892.133298,
+      "average_amount_usd": 79447.32111109562,
+      "percentage_of_total_transfers": 12.956017729287419,
+      "percentage_of_total_volume": 57.0698672636101
+    },
+    "ARB": {
+      "total_transfers": 5630,
+      "total_amount_usd": 42041955.026413,
+      "average_amount_usd": 7467.487571298934,
+      "percentage_of_total_transfers": 31.992271849073756,
+      "percentage_of_total_volume": 13.245722764891719
+    },
+    "POLYGON": {
+      "total_transfers": 1947,
+      "total_amount_usd": 6146961.9851319995,
+      "average_amount_usd": 3157.145344186954,
+      "percentage_of_total_transfers": 11.063757245141494,
+      "percentage_of_total_volume": 1.9366595642432403
+    },
+    "OP": {
+      "total_transfers": 3383,
+      "total_amount_usd": 13676152.199045999,
+      "average_amount_usd": 4042.610759398758,
+      "percentage_of_total_transfers": 19.223775429026023,
+      "percentage_of_total_volume": 4.30880344182898
+    }
+  }
+}
