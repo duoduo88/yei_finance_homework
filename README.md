@@ -75,8 +75,6 @@ yei_finance_homework/
 
 ```bash
 pip install pandas numpy requests
-# 可选：安装 matplotlib seaborn 用于图表生成
-pip install matplotlib seaborn
 ```
 
 ### 2. 数据收集
@@ -221,4 +219,5 @@ OP:      https://api.goldsky.com/api/public/project_cmgzims7d000c5np28b637r62/su
 
 
 # 详细的查询语句和使用示例请参考 `subgraph_queries.md` 文件。
+
 
