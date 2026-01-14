@@ -5,17 +5,6 @@ from collections import defaultdict
 import json
 import csv
 
-# 如果matplotlib可用，导入它
-try:
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-    # 设置中文字体支持
-    plt.rcParams['font.sans-serif'] = ['SimHei', 'DejaVu Sans']
-    plt.rcParams['axes.unicode_minus'] = False
-    HAS_MATPLOTLIB = True
-except ImportError:
-    HAS_MATPLOTLIB = False
-    print("警告: matplotlib未安装，将跳过图表生成")
 
 class CCTPAnalyzer:
     def __init__(self, transfers_file="all_chains_transfers.csv", gas_file="all_chains_gas.csv"):
@@ -283,48 +272,6 @@ class CCTPAnalyzer:
         print(f"已导出分析摘要: {filename}")
         return summary
     
-    def generate_charts(self):
-        """生成图表"""
-        if not HAS_MATPLOTLIB:
-            print("跳过图表生成 (matplotlib未安装)")
-            return
-            
-        try:
-            # 1. 各链转账次数分布
-            plt.figure(figsize=(12, 8))
-            
-            plt.subplot(2, 2, 1)
-            chain_counts = self.transfers_df['chain'].value_counts()
-            plt.pie(chain_counts.values, labels=chain_counts.index, autopct='%1.1f%%')
-            plt.title('各链转账次数分布')
-            
-            # 2. 各链转账金额分布
-            plt.subplot(2, 2, 2)
-            chain_amounts = self.transfers_df.groupby('chain')['amount_usd'].sum()
-            plt.pie(chain_amounts.values, labels=chain_amounts.index, autopct='%1.1f%%')
-            plt.title('各链转账金额分布')
-            
-            # 3. 每日转账趋势
-            plt.subplot(2, 2, 3)
-            daily_counts = self.transfers_df.groupby('date').size()
-            plt.plot(daily_counts.index, daily_counts.values)
-            plt.title('每日转账次数趋势')
-            plt.xticks(rotation=45)
-            
-            # 4. 转账金额分布
-            plt.subplot(2, 2, 4)
-            plt.hist(self.transfers_df['amount_usd'], bins=50, alpha=0.7)
-            plt.title('转账金额分布')
-            plt.xlabel('金额 (USD)')
-            plt.ylabel('频次')
-            plt.yscale('log')
-            
-            plt.tight_layout()
-            plt.savefig('cctp_analysis_charts.png', dpi=300, bbox_inches='tight')
-            print("已生成图表: cctp_analysis_charts.png")
-            
-        except Exception as e:
-            print(f"生成图表时出错: {e}")
     
     def run_complete_analysis(self):
         """运行完整分析"""
@@ -349,9 +296,6 @@ class CCTPAnalyzer:
         user_rankings = self.export_user_rankings()
         summary = self.export_summary_report()
         
-        # 生成图表
-        print("\n生成可视化图表...")
-        self.generate_charts()
         
         print("\n" + "="*60)
         print("分析完成！")
@@ -360,10 +304,6 @@ class CCTPAnalyzer:
         print("- daily_transfer_stats.csv (每日转账统计)")
         print("- active_users_ranking.csv (活跃用户排行榜)")
         print("- analysis_summary.json (分析摘要)")
-        if HAS_MATPLOTLIB:
-            print("- cctp_analysis_charts.png (图表)")
-        else:
-            print("- 图表生成已跳过 (需要安装matplotlib)")
         
         return {
             'basic_stats': basic_stats,
