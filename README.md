@@ -50,7 +50,7 @@ yei_finance_homework/
 - `all_chains_transfers.csv` - 转账主表
 - `all_chains_gas.csv` - 手续费表
 
-### 2. 数据导出脚本 (`yei_cctp_analysis.py`)
+### 2. 完整数据导出脚本 (`yei_cctp_analysis.py`)
 
 **功能**: 对收集的数据进行多维度分析并导出结果
 
@@ -219,6 +219,7 @@ OP:      https://api.goldsky.com/api/public/project_cmgzims7d000c5np28b637r62/su
 
 
 # 详细的查询语句和使用示例请参考 `subgraph_queries.md` 文件。
+
 
 
 
